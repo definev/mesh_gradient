@@ -1,4 +1,5 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:mesh_gradient/src/animated_mesh_gradient_options.dart';
 
@@ -28,9 +29,11 @@ class AnimatedMeshGradientPainter extends CustomPainter {
     shader.setFloat(3, options.frequency);
     shader.setFloat(4, options.amplitude);
     shader.setFloat(5, options.speed);
+    shader.setFloat(6, options.grainAmount);
+    shader.setFloat(7, options.grainSize);
 
     //colors
-    int i = 6;
+    int i = 8;
     for (Color color in colors) {
       shader.setFloat(i, color.red / 255);
       i++;

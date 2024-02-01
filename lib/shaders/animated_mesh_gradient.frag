@@ -8,6 +8,8 @@ uniform float uTime;
 uniform float uFrequency;
 uniform float uAmplitude;
 uniform float uSpeed;
+uniform float uGrainAmount;
+uniform float uGrainSize;
 
 uniform vec3 uColor1;
 uniform vec3 uColor2;
@@ -78,6 +80,14 @@ void main()
     vec3 finalComp = mix(layer1, layer2, S(.5, -.3, tuv.y));
     
     vec3 col = finalComp;
+
+    vec4 color = vec4(col,1.0);
+
+    // Generate random noise
+    float noise = (fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453) - 0.5) * 2.0;
+
+    // Add noise to the original color
+    color.rgb += noise * uGrainAmount * uGrainSize;
     
-    fragColor = vec4(col,1.0);
+    fragColor = color;
 }
