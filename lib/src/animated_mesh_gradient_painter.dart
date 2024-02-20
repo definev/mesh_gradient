@@ -35,11 +35,11 @@ class AnimatedMeshGradientPainter extends CustomPainter {
     //colors
     int i = 8;
     for (Color color in colors) {
-      shader.setFloat(i, color.red / 255);
+      shader.setFloat(i, double.parse(color.red.toString()) / 255);
       i++;
-      shader.setFloat(i, color.green / 255);
+      shader.setFloat(i, double.parse(color.green.toString()) / 255);
       i++;
-      shader.setFloat(i, color.blue / 255);
+      shader.setFloat(i, double.parse(color.blue.toString()) / 255);
       i++;
     }
 
