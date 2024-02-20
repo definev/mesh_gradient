@@ -1,5 +1,7 @@
 #include <flutter/runtime_effect.glsl>
 
+precision mediump float;
+
 #define S(a,b,t) smoothstep(a,b,t)
 
 uniform vec2 uSize;
