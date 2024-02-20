@@ -1,6 +1,6 @@
 #include <flutter/runtime_effect.glsl>
 
-precision mediump float;
+precision highp float;
 
 #define S(a,b,t) smoothstep(a,b,t)
 
